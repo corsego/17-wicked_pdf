@@ -3,9 +3,21 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Posts: #{@posts.count}", template: "posts/index.html.erb"
+      end
+    end
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Post id: #{@post.id}", template: "posts/post.html.erb"
+      end
+    end
   end
 
   def new

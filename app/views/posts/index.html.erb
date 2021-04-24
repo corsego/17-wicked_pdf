@@ -1,7 +1,7 @@
 <h1>Posts</h1>
 
 <%= link_to 'New Post', new_post_path %>
-
+<%= link_to "Posts PDF", posts_path(format: :pdf) %>
 <br>
 
 <table>
@@ -10,7 +10,7 @@
       <th>Id</th>
       <th>Title</th>
       <th>Content</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -20,6 +20,7 @@
         <td><%= post.id %></td>
         <td><%= post.title %></td>
         <td><%= simple_format(post.content) %></td>
+        <td><%= link_to 'PDF', post_path(post, format: :pdf) %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
