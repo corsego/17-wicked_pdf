@@ -58,4 +58,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem "faker"
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+gem "wkhtmltopdf-binary", group: :development
+gem "wkhtmltopdf-heroku", group: :production
